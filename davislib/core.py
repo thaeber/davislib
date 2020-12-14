@@ -31,6 +31,12 @@ class DavisFrame:
         self.buffer = buffer
 
     @property
+    def attributes(self):
+        return metalib.from_obj(
+            {item.Name: item.Value
+             for item in self.frame.Attributes})
+
+    @property
     def components(self) -> List[str]:
         return self.frame.ComponentNames._ref
 
