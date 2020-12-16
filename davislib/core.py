@@ -48,6 +48,9 @@ class DavisFrame:
     def grids(self) -> Mapping:
         return self.frame.Grids
 
+    def scale_values(self, values, scale):
+        return values * scale.Slope + scale.Offset
+
     def _plane_data_from_index(self, component_index: int, iplane: int = 0):
         # get plane data
         component = self.frame.Components[component_index]
@@ -58,8 +61,7 @@ class DavisFrame:
         image = np.array(plane._data).reshape((ny, nx))
 
         # scale image and return
-        scale = component.Scale
-        return image * scale.Slope + scale.Offset
+        return self.scale_values(image, component.Scale)
 
     def get_plane(self, component: Union[int, str] = 0, iplane: int = 0):
 
@@ -96,14 +98,20 @@ class DavisFrame:
         return self.frame.Components[0].Planes[0].size[1]
 
     @property
+    def shape(self):
+        return (self.ny, self.nx)
+
+    @property
     def x(self):
-        x = np.arange(1, self.nx + 1)
-        return x * self.grids.X * self.scales.X.Slope + self.scales.X.Offset
+        x = np.arange(1, self.nx + 1) * self.grids.X
+        return self.scale_values(x, self.scales.X)
+        # return x * self.grids.X * self.scales.X.Slope + self.scales.X.Offset
 
     @property
     def y(self):
-        y = np.arange(1, self.ny + 1)
-        return y * self.grids.Y * self.scales.Y.Slope + self.scales.Y.Offset
+        y = np.arange(1, self.ny + 1) * self.grid.Y
+        return self.scale_values(y, self.scales.Y)
+        # return y * self.grids.Y * self.scales.Y.Slope + self.scales.Y.Offset
 
     @property
     def is_vector(self):
@@ -209,10 +217,16 @@ class DavisSet(Sequence):
     def __init__(self,
                  set_filename: Union[str, Path],
                  matlab_engine: Union[MatlabEngine, None] = None):
+
+        self.filename = Path(set_filename)
+        if not self.filename.exists():
+            raise FileNotFoundError(self.filename)
+        if not self.filename.is_file():
+            raise IOError(f'{self.filename} is not a file')
+
         if matlab_engine is None:
             matlab_engine = get_default_matlab_engine()
         self._matlab_engine = matlab_engine
-        self.filename = Path(set_filename)
 
     @property
     def set_size(self) -> int:
