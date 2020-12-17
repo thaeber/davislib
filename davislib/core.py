@@ -210,7 +210,10 @@ class DavisBuffer(Sequence):
         return self.num_frames
 
     def __getitem__(self, idx: int) -> DavisFrame:
-        return self.get_frame(idx)
+        if 0 <= idx < self.num_frames:
+            return self.get_frame(idx)
+        else:
+            raise IndexError()
 
 
 class DavisSet(Sequence):
@@ -228,9 +231,14 @@ class DavisSet(Sequence):
             matlab_engine = get_default_matlab_engine()
         self._matlab_engine = matlab_engine
 
+        self._set_size = None
+
     @property
     def set_size(self) -> int:
-        return int(self._matlab_engine.lvsetsize(str(self.filename)))
+        if self._set_size is None:
+            self._set_size = int(
+                self._matlab_engine.lvsetsize(str(self.filename)))
+        return self._set_size
 
     def get_buffer(self, index: int) -> DavisBuffer:
         buffer = self._matlab_engine.readimx(str(self.filename),
@@ -241,7 +249,10 @@ class DavisSet(Sequence):
         return self.set_size
 
     def __getitem__(self, idx: int) -> DavisBuffer:
-        return self.get_buffer(idx)
+        if 0 <= idx < self.set_size:
+            return self.get_buffer(idx)
+        else:
+            raise IndexError()
 
     # def __iter__(self) -> Iterator[DavisBuffer]:
     #     for k in range(self.set_size):
