@@ -109,7 +109,7 @@ class DavisFrame:
 
     @property
     def y(self):
-        y = np.arange(1, self.ny + 1) * self.grid.Y
+        y = np.arange(1, self.ny + 1) * self.grids.Y
         return self.scale_values(y, self.scales.Y)
         # return y * self.grids.Y * self.scales.Y.Slope + self.scales.Y.Offset
 
