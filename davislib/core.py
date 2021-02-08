@@ -63,7 +63,16 @@ class DavisFrame:
         # scale image and return
         return self.scale_values(image, component.Scale)
 
-    def get_plane(self, component: Union[int, str] = 0, iplane: int = 0):
+    def get_plane(self, component: Union[int, str] = 0):
+
+        if isinstance(component, numbers.Integral):
+            idx = component
+        else:
+            idx = self.components.index(component)
+
+        return self._plane_data_from_index(idx)
+
+    def image(self, component: Union[int, str] = 0):
 
         if isinstance(component, numbers.Integral):
             idx = component
@@ -245,6 +254,15 @@ class DavisSet(Sequence):
                                              float(index + 1))
         return DavisBuffer(buffer, self)
 
+    def frame(self, buffer: int, frame: int = 0):
+        return self.get_buffer(buffer).get_frame(frame)
+
+    def image(self,
+              buffer: int,
+              frame: int = 0,
+              component: Union[int, str] = 0):
+        return self.get_buffer(buffer).get_frame(frame).get_plane(component)
+
     def __len__(self) -> int:
         return self.set_size
 
@@ -253,7 +271,3 @@ class DavisSet(Sequence):
             return self.get_buffer(idx)
         else:
             raise IndexError()
-
-    # def __iter__(self) -> Iterator[DavisBuffer]:
-    #     for k in range(self.set_size):
-    #         yield self.get_buffer(k)
