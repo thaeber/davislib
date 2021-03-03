@@ -196,6 +196,9 @@ class DavisFrame:
         result = dict(U=U, V=V)
         return metalib.from_obj(result)
 
+    def vec2D(self):
+        return self.get_vec2D()
+
 
 class DavisBuffer(Sequence):
     def __init__(self, buffer, set_=None):
@@ -262,6 +265,9 @@ class DavisSet(Sequence):
               frame: int = 0,
               component: Union[int, str] = 0):
         return self.get_buffer(buffer).get_frame(frame).get_plane(component)
+
+    def vec2D(self, buffer: int, frame: int = 0):
+        return self.get_buffer(buffer).get_frame(frame).get_vec2D()
 
     def __len__(self) -> int:
         return self.set_size
