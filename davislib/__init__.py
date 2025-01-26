@@ -1,3 +1,5 @@
-__version__ = '0.1.0'
+from version import __version__
 
-from .core import DavisSet, DavisBuffer, DavisFrame
+__all__ = [
+    __version__,
+]
