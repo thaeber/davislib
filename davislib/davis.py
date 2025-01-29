@@ -421,3 +421,7 @@ def read_set(path: Path):
         return Multiset(path)
     else:
         return ImageSet(path)
+
+
+def close_set(image_set: Multiset | ImageSet):
+    image_set.close()

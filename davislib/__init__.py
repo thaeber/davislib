@@ -1,4 +1,12 @@
-from .davis import ImageBuffer, ImageFrame, ImageSet, Multiset, extract_data, read_set
+from .davis import (
+    ImageBuffer,
+    ImageFrame,
+    ImageSet,
+    Multiset,
+    close_set,
+    extract_data,
+    read_set,
+)
 from .version import __version__
 
 __all__ = [
@@ -7,6 +15,7 @@ __all__ = [
     ImageFrame,
     ImageSet,
     Multiset,
+    close_set,
     extract_data,
     read_set,
 ]  # type: ignore
