@@ -1,7 +1,6 @@
 # %%
-import itertools
 from pathlib import Path
-from typing import Any, Dict
+from typing import Dict
 
 import lvpyio as lv
 import numpy as np
@@ -11,7 +10,7 @@ import pandas as pd
 
 from .attribute import Attribute, AttributeLevel
 from .component import Component
-from .dimensions import Dimensions, IndexKey
+from .dimensions import Dimensions
 from .scale import Scale
 
 
@@ -105,7 +104,10 @@ class ImageSetAccessor:
                 name = attrs.pop(f'DevDataName{k}').value
                 alias = attrs.pop(f'DevDataAlias{k}').value
                 _ = attrs.pop(f'DevDataScaleX{k}').value
-                i_scale = Scale.from_str(attrs.pop(f'DevDataScaleI{k}').value)  # type: ignore
+
+                i_scale = Scale.from_str(
+                    attrs.pop(f'DevDataScaleI{k}').value  # type: ignore
+                )  # type: ignore
 
                 result[attr.key] = Attribute.infer(
                     attr.key,
@@ -169,7 +171,7 @@ class ImageSetAccessor:
             for j, iframe in enumerate(index.get_source_range('frame')):
                 frame = buffer[iframe]
                 for k, iz in enumerate(index.get_source_range('z')):
-                    plane = frame.components[component.name][iz]
+                    frame.components[component.name][iz]
                     data[i, j, k, ...] = frame.components[component.name][0][iy, ix]
 
         # squeeze out extra dimensions

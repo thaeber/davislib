@@ -145,7 +145,6 @@ class DavisBackend(BackendEntrypoint):
 
         # image components
         for name, component in images.components.items():
-
             variable_attrs = {}
             if component.scale.unit:
                 variable_attrs['unit'] = component.scale.unit
@@ -165,7 +164,6 @@ class DavisBackend(BackendEntrypoint):
 
         # image attributes
         for name, attr in attrs.items():
-
             variable_attrs = {}
             variable_attrs['name'] = attr.key
             if attr.unit is not None:

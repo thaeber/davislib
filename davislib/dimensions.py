@@ -48,7 +48,6 @@ class Dimensions(Mapping[str, int]):
 
 class IndexKey:
     def __init__(self, dims: Dimensions, **keys: slice | int):
-
         self._dimensions = dims
         self._names = dims._all_names
         if not keys:
@@ -78,7 +77,7 @@ class IndexKey:
         return self._keys
 
     def get_source_range(self, name: str, default=range(1)) -> range:
-        if not name in self._names:
+        if name not in self._names:
             return default
         else:
             index = self._names.index(name)

@@ -4,7 +4,6 @@ from davislib.dimensions import Dimensions, IndexKey
 
 
 class TestDimensions:
-
     def test_dimensions_initialization(self):
         dims = Dimensions(width=10, height=20, depth=1)
         assert dims['width'] == 10

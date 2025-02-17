@@ -1,6 +1,4 @@
 import numpy as np
-import numpy.testing as npt
-import pint
 from numpy.dtypes import StringDType
 
 from davislib import Attribute, AttributeLevel, Dimensions

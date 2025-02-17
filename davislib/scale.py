@@ -7,7 +7,6 @@ import numpy as np
 
 # %%
 class Scale:
-
     def __init__(
         self,
         slope: int | float | np.ndarray = 1,

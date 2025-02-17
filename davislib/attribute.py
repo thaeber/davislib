@@ -177,7 +177,8 @@ class Attribute:
                 if unit is None:
                     unit = str(pint.Unit(''))
             elif re.match(rf'{tokenize.Number}', value) and value.count('.') <= 1:
-                # check if value starts with a number and does not contain more than one '.' character
+                # check if value starts with a number and does not contain more
+                # than one '.' character
                 # (the latter is to avoid matching version strings)
                 try:
                     # try to convert value to pint.Quantity
@@ -188,7 +189,7 @@ class Attribute:
                     unit = str(quantity.units)
                     dtype = np.min_scalar_type(quantity.magnitude)
                     decoder = lambda x: (
-                        pint.application_registry.get().Quantity(x).magnitude  # type: ignore
+                        pint.application_registry.get().Quantity(x).magnitude
                     )
                 except (pint.PintError, AssertionError):
                     dtype = StringDType()

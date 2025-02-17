@@ -109,17 +109,26 @@ class TestListAttributes:
             pytest.param(
                 'DevDataName4',
                 'buffer',
-                'IroDelayScanValue [ImageIntensifier.Iro10: VC23-0424] (Camera.ImagerSCMOS5MCLHS: 61008958)',
+                (
+                    'IroDelayScanValue [ImageIntensifier.Iro10: VC23-0424] '
+                    '(Camera.ImagerSCMOS5MCLHS: 61008958)'
+                ),
             ),
             pytest.param(
                 'DevDataName5',
                 'buffer',
-                'IroGainScanValue [ImageIntensifier.Iro10: VC23-0424] (Camera.ImagerSCMOS5MCLHS: 61008958)',
+                (
+                    'IroGainScanValue [ImageIntensifier.Iro10: VC23-0424] '
+                    '(Camera.ImagerSCMOS5MCLHS: 61008958)'
+                ),
             ),
             pytest.param(
                 'DevDataName6',
                 'buffer',
-                'IroGateScanValue [ImageIntensifier.Iro10: VC23-0424] (Camera.ImagerSCMOS5MCLHS: 61008958)',
+                (
+                    'IroGateScanValue [ImageIntensifier.Iro10: VC23-0424] '
+                    '(Camera.ImagerSCMOS5MCLHS: 61008958)'
+                ),
             ),
             pytest.param(
                 'DevDataName7',
@@ -505,7 +514,6 @@ class TestListAttributes:
 
 
 class TestGetData:
-
     def test_single_buffer(self, data_path):
         with ImageSetAccessor(data_path / 'SimpleImageSet') as images:
             data = images.get_data('PIXEL', buffer=0, y=slice(None), x=slice(None))

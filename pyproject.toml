@@ -40,6 +40,10 @@ build-backend = "poetry.core.masonry.api"
 [tool.black]
 skip-string-normalization = true
 
+[tool.ruff]
+ignore = ["E731"]
+
+
 [tool.bumpversion]
 current_version = "0.1.0"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
