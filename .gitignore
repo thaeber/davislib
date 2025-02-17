@@ -1,4 +1,8 @@
 temp/
+/temp
+
+# poetry
+poetry.lock
 
 # vscode settings
 .vscode
