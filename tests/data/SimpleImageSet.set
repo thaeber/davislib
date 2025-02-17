@@ -1,0 +1,14 @@
+// set file <D:/MyProjects/H2-SCR/XArchive/2025-02-12/2025-02-12-A01-250212-115525/Copy.set> created by DaVis
+
+#GROUP Sets
+SetType = 256;
+SetGroups = "";
+SetTime = "2025-02-13T20:16:05+01:00";
+SetComments = "";
+SetStart = 1;
+SetInc = 1;
+SetSourceSet = "";
+SetTitle = "Simple Image Set";
+SetViewCallback = "";
+SetLoadCallback = "";
+bpInfoString = "2025-02-13 20:16:05: copy data";
