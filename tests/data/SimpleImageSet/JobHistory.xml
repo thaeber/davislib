@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JobSequence>
+	<JobItem Index="0">
+		<SourceIndex>-1</SourceIndex>
+		<Job Identifier="SetProcessing">
+			<Enabled>true</Enabled>
+			<par id="INT" name="StartIndex">
+				<desc>Start index</desc>
+				<value>-1</value>
+			</par>
+			<par id="INT" name="EndIndex">
+				<desc>End index</desc>
+				<value>-1</value>
+			</par>
+			<par id="INT" name="Increment">
+				<desc>Increment</desc>
+				<value>-1</value>
+			</par>
+			<par id="INT" name="FullRange">
+				<desc>Full range</desc>
+				<value>1</value>
+			</par>
+			<StoreMode>3</StoreMode>
+			<StoreName>Default</StoreName>
+			<SetOp Identifier="CL:1:BoMiscCopy:-1" />
+		</Job>
+	</JobItem>
+</JobSequence>

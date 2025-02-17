@@ -1,3 +1,16 @@
-__version__ = '0.1.0'
+from .attribute import Attribute, AttributeLevel
+from .dimensions import Dimensions
+from .image_set import ImageSetAccessor
+from .scale import Scale
+from .version import __version__
+from .xarray_backend import DavisBackend
 
-from .core import DavisSet, DavisBuffer, DavisFrame
+__all__ = [
+    __version__,
+    Attribute,
+    AttributeLevel,
+    Dimensions,
+    ImageSetAccessor,
+    Scale,
+    DavisBackend,
+]  # type: ignore
