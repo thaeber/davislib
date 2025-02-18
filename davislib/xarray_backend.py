@@ -53,11 +53,14 @@ class DavisComponentBackendArray(BackendArray):
                 self.component.name, **dict(zip(self._key_names, key))
             )
 
-            squeeze_axis = tuple(k for k, v in enumerate(key) if isinstance(v, int))
-            if squeeze_axis:
-                data = np.squeeze(data, axis=squeeze_axis)
+            if not self.component.dimensions.squeeze:
+                squeeze_axis = tuple(k for k, v in enumerate(key) if isinstance(v, int))
+                if squeeze_axis:
+                    data = np.squeeze(data, axis=squeeze_axis)
+            else:
+                data = np.squeeze(data)
 
-            return data  # .squeeze()
+            return data
 
 
 class DavisAttributeBackendArray(BackendArray):
@@ -93,11 +96,14 @@ class DavisAttributeBackendArray(BackendArray):
                 self.attribute.key, **dict(zip(self._key_names, key))
             )
 
-            squeeze_axis = tuple(k for k, v in enumerate(key) if isinstance(v, int))
-            if squeeze_axis:
-                data = np.squeeze(data, axis=squeeze_axis)
+            if not self.attribute.dimensions.squeeze:
+                squeeze_axis = tuple(k for k, v in enumerate(key) if isinstance(v, int))
+                if squeeze_axis:
+                    data = np.squeeze(data, axis=squeeze_axis)
+            else:
+                data = np.squeeze(data)
 
-            return data  # .squeeze()
+            return data
 
 
 class DavisBackend(BackendEntrypoint):

@@ -37,6 +37,10 @@ class Dimensions(Mapping[str, int]):
     def names(self):
         return self._names
 
+    @property
+    def squeeze(self):
+        return self._squeeze
+
     def with_dimensions(self, **kwargs: int):
         if set(self.names) & set(kwargs.keys()):
             raise ValueError("Cannot override existing dimension")
