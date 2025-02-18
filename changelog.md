@@ -1,4 +1,16 @@
 <!-- insertion marker -->
+<a name="v0.2.2"></a>
+
+## [v0.2.2](https://gitlab.kit.edu/kit/itcp/akd/libraries/davislib/compare/v0.2.1...v0.2.2) (2025-02-18)
+
+### Bug Fixes
+
+- Run time error caused by squeezing dimensions ([cc3dc5c](https://gitlab.kit.edu/kit/itcp/akd/libraries/davislib/commit/cc3dc5ccacc0a650a18452ad26ee8c139824f17e))
+
+### Chore
+
+- git-changelog -B patch ([aeed615](https://gitlab.kit.edu/kit/itcp/akd/libraries/davislib/commit/aeed6159d8ce4af2d0f0fb6b6fcbdab635d56238))
+
 <a name="v0.2.1"></a>
 
 ## [v0.2.1](https://gitlab.kit.edu/kit/itcp/akd/libraries/davislib/compare/v0.2.0...v0.2.1) (2025-02-17)
