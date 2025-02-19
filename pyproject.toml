@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "davislib"
-version = "0.2.3"
+version = "0.2.4"
 description = "A small Python wrapper module for loading davis image sets as xarrays"
 authors = ["Thomas Haeber <thomas.haeber@kit.edu>"]
 readme = "README.md"
@@ -42,7 +42,7 @@ ignore = ["E731"]
 
 
 [tool.bumpversion]
-current_version = "0.2.3"
+current_version = "0.2.4"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"
