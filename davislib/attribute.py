@@ -134,6 +134,19 @@ class Attribute:
             return None
 
     @staticmethod
+    def _decode_timestamp(value: str):
+        if ',' in value:
+            format = r'%Y-%m-%dT%H:%M:%S,%f%z'
+        elif '.' in value:
+            format = r'%Y-%m-%dT%H:%M:%S.%f%z'
+        else:
+            format = r'%Y-%m-%dT%H:%M:%S%z'
+        return pd.to_datetime(
+            value,
+            format=format,
+        ).tz_localize(None)
+
+    @staticmethod
     def infer(
         key: str,
         level: AttributeLevel,
@@ -157,12 +170,7 @@ class Attribute:
                 unit = str(pint.Unit(''))
         elif key.lower() == 'timestamp':
             dtype = np.dtype('datetime64[us]')
-            decoder = lambda x: np.datetime64(
-                pd.to_datetime(
-                    x,
-                    format=r'%Y-%m-%dT%H:%M:%S,%f%z',
-                ).tz_localize(None)
-            )
+            decoder = Attribute._decode_timestamp
         elif isinstance(value, str):
             if (_value := Attribute._try_int(value)) is not None:
                 # try to convert value to int

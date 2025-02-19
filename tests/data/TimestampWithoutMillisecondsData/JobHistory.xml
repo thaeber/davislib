@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JobSequence>
+	<JobItem Index="0">
+		<SourceIndex>-1</SourceIndex>
+		<Job Identifier="SetProcessing">
+			<Enabled>true</Enabled>
+			<par id="INT" name="StartIndex">
+				<desc>Start index</desc>
+				<value>-1</value>
+			</par>
+			<par id="INT" name="EndIndex">
+				<desc>End index</desc>
+				<value>-1</value>
+			</par>
+			<par id="INT" name="Increment">
+				<desc>Increment</desc>
+				<value>-1</value>
+			</par>
+			<par id="INT" name="FullRange">
+				<desc>Full range</desc>
+				<value>1</value>
+			</par>
+			<StoreMode>3</StoreMode>
+			<StoreName>Default</StoreName>
+			<SetOp Identifier="IMAGE.EXTRACTVOLUME">
+				<parameter>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;root class="CropOperation" version="2"&gt;
+	&lt;UnitMode class="int32" value="1" /&gt;
+	&lt;UseWidth class="bool" value="false" /&gt;
+	&lt;UseHeight class="bool" value="true" /&gt;
+	&lt;UseDepth class="bool" value="false" /&gt;
+	&lt;UseTime class="bool" value="false" /&gt;
+	&lt;Rectangle&gt;
+		&lt;TopLeft class="point4D"&gt;
+			&lt;X class="int32" value="-4" /&gt;
+			&lt;Y class="int32" value="872" /&gt;
+			&lt;Z class="int32" value="0" /&gt;
+			&lt;T class="int32" value="0" /&gt;
+		&lt;/TopLeft&gt;
+		&lt;BottomRight class="point4D"&gt;
+			&lt;X class="int32" value="2556" /&gt;
+			&lt;Y class="int32" value="1073" /&gt;
+			&lt;Z class="int32" value="1" /&gt;
+			&lt;T class="int32" value="1" /&gt;
+		&lt;/BottomRight&gt;
+	&lt;/Rectangle&gt;
+	&lt;ScaledRectangle&gt;
+		&lt;TopLeft class="point4D"&gt;
+			&lt;X class="double" value="-4" /&gt;
+			&lt;Y class="double" value="872" /&gt;
+			&lt;Z class="double" value="0" /&gt;
+			&lt;T class="double" value="0" /&gt;
+		&lt;/TopLeft&gt;
+		&lt;BottomRight class="point4D"&gt;
+			&lt;X class="double" value="2556" /&gt;
+			&lt;Y class="double" value="1073" /&gt;
+			&lt;Z class="double" value="1" /&gt;
+			&lt;T class="double" value="1" /&gt;
+		&lt;/BottomRight&gt;
+	&lt;/ScaledRectangle&gt;
+&lt;/root&gt;</parameter>
+			</SetOp>
+		</Job>
+	</JobItem>
+	<JobItem Index="1">
+		<SourceIndex>0</SourceIndex>
+		<Job Identifier="SetProcessing">
+			<Enabled>true</Enabled>
+			<par id="INT" name="StartIndex">
+				<desc>Start index</desc>
+				<value>-1</value>
+			</par>
+			<par id="INT" name="EndIndex">
+				<desc>End index</desc>
+				<value>-1</value>
+			</par>
+			<par id="INT" name="Increment">
+				<desc>Increment</desc>
+				<value>-1</value>
+			</par>
+			<par id="INT" name="FullRange">
+				<desc>Full range</desc>
+				<value>1</value>
+			</par>
+			<StoreMode>3</StoreMode>
+			<StoreName>Default</StoreName>
+			<SetOp Identifier="CL:1:BoMiscCopy:-1" />
+		</Job>
+	</JobItem>
+</JobSequence>
