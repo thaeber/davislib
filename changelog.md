@@ -1,4 +1,15 @@
 <!-- insertion marker -->
+<a name="v0.2.5"></a>
+
+## [v0.2.5](https://github.com/thaeber/davislib/compare/v0.2.4...v0.2.5) (2025-02-19)
+
+### Bug Fixes
+
+- No longer raises `ValueError` when passing `attributes=None` ([6aa4991](https://github.com/thaeber/davislib/commit/6aa4991e0038cfc8ce2eb85047e75d85e5a48986))
+
+### Chore
+
+- pre-commit run --all ([fcf5f2a](https://github.com/thaeber/davislib/commit/fcf5f2a278fb59773bb56f63e82dc21f418073ae))
 
 <a name="v0.2.4"></a>
 
@@ -57,3 +68,4 @@
 <a name="v0.1.0"></a>
 
 ## [v0.1.0](https://github.com/thaeber/davislib/compare/db92fcb55ba18edb94d436fcccc7413952ef36d4...v0.1.0) (2021-03-03)
+
