@@ -1,4 +1,5 @@
 <!-- insertion marker -->
+
 <a name="v0.2.4"></a>
 
 ## [v0.2.4](https://github.com/thaeber/davislib/compare/v0.2.3...v0.2.4) (2025-02-19)
@@ -56,4 +57,3 @@
 <a name="v0.1.0"></a>
 
 ## [v0.1.0](https://github.com/thaeber/davislib/compare/db92fcb55ba18edb94d436fcccc7413952ef36d4...v0.1.0) (2021-03-03)
-
