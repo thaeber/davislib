@@ -1,4 +1,13 @@
 <!-- insertion marker -->
+
+<a name="v0.2.3"></a>
+
+## [v0.2.3](https://gitlab.kit.edu/kit/itcp/akd/libraries/davislib/compare/v0.2.2...v0.2.3) (2025-02-19)
+
+### Bug Fixes
+
+- Allow timestamp data without milliseconds ([6e4f4fb](https://gitlab.kit.edu/kit/itcp/akd/libraries/davislib/commit/6e4f4fb2ac42204258eb1cd83e54df6caed4b394))
+
 <a name="v0.2.2"></a>
 
 ## [v0.2.2](https://gitlab.kit.edu/kit/itcp/akd/libraries/davislib/compare/v0.2.1...v0.2.2) (2025-02-18)
@@ -36,4 +45,3 @@
 <a name="v0.1.0"></a>
 
 ## [v0.1.0](https://gitlab.kit.edu/kit/itcp/akd/libraries/davislib/compare/db92fcb55ba18edb94d436fcccc7413952ef36d4...v0.1.0) (2021-03-03)
-
