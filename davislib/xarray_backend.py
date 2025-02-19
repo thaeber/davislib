@@ -143,6 +143,8 @@ class DavisBackend(BackendEntrypoint):
             attrs = {a.key: a for a in map(get_default, attributes)}
         elif isinstance(attributes, dict):
             attrs = {key: get_default(value) for key, value in attributes.items()}
+        elif attributes is None:
+            pass
         else:
             raise ValueError("attributes must be a list, tuple or dict")
 
