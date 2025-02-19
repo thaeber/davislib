@@ -1,15 +1,10 @@
-from pathlib import Path
 import numpy as np
 import numpy.testing
-import pytest
-from numpy.dtypes import StringDType
 
 from davislib import ImageSetAccessor
-from davislib.attribute import AttributeLevel
 
 
 class TestGetData:
-
     def test_get_timestamp_attribute(self, data_path):
         with ImageSetAccessor(data_path / 'TimestampWithoutMillisecondsData') as images:
             timestamp = images.get_attribute('Timestamp')
