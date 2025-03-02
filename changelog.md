@@ -1,4 +1,13 @@
 <!-- insertion marker -->
+
+<a name="v0.2.6"></a>
+
+## [v0.2.6](https://github.com/thaeber/davislib/compare/v0.2.5...v0.2.6) (2025-03-02)
+
+### Bug Fixes
+
+- Renamed attribute for storing units to `units` to match the convention used by `pint-xarray` ([897c4e0](https://github.com/thaeber/davislib/commit/897c4e0ddf17bc17a605ebec3cd7bb39665f4091))
+
 <a name="v0.2.5"></a>
 
 ## [v0.2.5](https://github.com/thaeber/davislib/compare/v0.2.4...v0.2.5) (2025-02-19)
@@ -68,4 +77,3 @@
 <a name="v0.1.0"></a>
 
 ## [v0.1.0](https://github.com/thaeber/davislib/compare/db92fcb55ba18edb94d436fcccc7413952ef36d4...v0.1.0) (2021-03-03)
-
