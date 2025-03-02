@@ -155,7 +155,7 @@ class DavisBackend(BackendEntrypoint):
         for name, component in images.components.items():
             variable_attrs = {}
             if component.scale.unit:
-                variable_attrs['unit'] = component.scale.unit
+                variable_attrs['units'] = component.scale.unit
 
             variables[name] = xr.Variable(
                 dims=component.dimensions.names,
@@ -175,7 +175,7 @@ class DavisBackend(BackendEntrypoint):
             variable_attrs = {}
             variable_attrs['name'] = attr.key
             if attr.unit is not None:
-                variable_attrs['unit'] = attr.unit
+                variable_attrs['units'] = attr.unit
             variable_attrs.update(attr.extra)
 
             variables[name] = xr.Variable(
